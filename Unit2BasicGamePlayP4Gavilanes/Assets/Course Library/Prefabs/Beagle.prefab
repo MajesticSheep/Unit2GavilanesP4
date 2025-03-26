@@ -2037,6 +2037,7 @@ GameObject:
   - component: {fileID: 682329475489820392}
   - component: {fileID: 1507158819408385863}
   - component: {fileID: 2325641294656788858}
+  - component: {fileID: 2966884433296627243}
   m_Layer: 0
   m_Name: Beagle
   m_TagString: Untagged
@@ -2129,7 +2130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9040ef698a22743a25e10f3e082762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 15
 --- !u!114 &1507158819408385863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2163,6 +2164,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.10221642, y: 0.20786545, z: 0.2780703}
   m_Center: {x: -0.0015423398, y: 0.092540905, z: 0.0339369}
+--- !u!114 &2966884433296627243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544809689584374056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654e07c501df155498bcc5f38171627b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3854664586795538383
 GameObject:
   m_ObjectHideFlags: 0

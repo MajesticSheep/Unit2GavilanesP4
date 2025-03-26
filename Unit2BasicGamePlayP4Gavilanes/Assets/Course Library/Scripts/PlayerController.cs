@@ -6,8 +6,14 @@ public class PlayerController : MonoBehaviour
 {
 
     public float horizontalInput;
+    public float verticalInput;
+
     public float speed = 10.0f;
-    public float xRange = 10;
+
+    public float xRange = 20;
+    public float zRangeTop = 15;
+    public float zRangeBottom = 0;
+
     public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +27,10 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
-        //keeps the player in bounds
+        verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+
+        //keeps the player in bounds on the left and right
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -32,10 +41,20 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
-        
+        //keeps the player in bounds on the top and bottom
+        if(transform.position.z > zRangeTop)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zRangeTop);
+        }
+
+        if(transform.position.z < zRangeBottom)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -zRangeBottom);
+        }
+
+        //Lauch a projectile from the player
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Lauch a projectile from the player
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }
