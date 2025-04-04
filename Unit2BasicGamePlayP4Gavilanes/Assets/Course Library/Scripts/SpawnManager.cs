@@ -29,7 +29,6 @@ public class SpawnManager : MonoBehaviour
         
         int animalIndex = Random.Range(0, animalPrefabs.Length);
             
-        Instantiate(animalPrefabs[animalIndex], spawnPos, 
-            animalPrefabs[animalIndex].transform.rotation);
+        Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
     }
 }
